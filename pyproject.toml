@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "threat-intel-ioc-checker"
+version = "1.0.0"
+description = "SOC Tier-1 IOC triage CLI (IPv4 / MD5 / SHA1 / SHA256) with AbuseIPDB, VirusTotal, and offline mock support"
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [
+    { name = "USER-Bi (Rg-Red)" },
+]
+license = { text = "MIT" }
+dependencies = [
+    "requests>=2.32,<3",
+    "rich>=13.7,<16",
+]
+
+[project.scripts]
+ioc-checker = "ioc_checker:main"
+
+[tool.setuptools]
+py-modules = ["ioc_checker", "validator", "cache_manager", "providers"]
